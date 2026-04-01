@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survei Kepuasan Layanan - OJK DIY</title>
+    <title>Survei Kepuasan Layanan BM - OJK DIY</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://ik.imagekit.io/logojkdiy/Layanan%20Terintegrasi%20-%20OJK%20DIY.png?updatedAt=1758676242385">
     
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Survei Kepuasan Layanan - OJK DIY">
-    <meta name="description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+    <meta name="title" content="Survei Kepuasan Layanan BM - OJK DIY">
+    <meta name="description" content="Survei Kepuasan Layanan khusus unit Building Management di lingkungan Otoritas Jasa Keuangan (OJK) DIY.">
 
     <!-- Open Graph / Facebook / WhatsApp / Telegram -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Survei Kepuasan Layanan - OJK DIY">
-    <meta property="og:description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+    <meta property="og:title" content="Survei Kepuasan Layanan BM - OJK DIY">
+    <meta property="og:description" content="Survei Kepuasan Layanan khusus unit Building Management di lingkungan Otoritas Jasa Keuangan (OJK) DIY.">
     <meta property="og:image" content="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:title" content="Survei Kepuasan Layanan - OJK DIY">
-    <meta property="twitter:description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+    <meta property="twitter:title" content="Survei Kepuasan Layanan BM - OJK DIY">
+    <meta property="twitter:description" content="Survei Kepuasan Layanan khusus unit Building Management di lingkungan Otoritas Jasa Keuangan (OJK) DIY.">
     <meta property="twitter:image" content="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771">
     
     <!-- Google Fonts: Inter -->
@@ -67,14 +67,11 @@
     </script>
     
     <style>
-        /* Base styling untuk memastikan background benar-benar bersih */
         body {
             background-color: #FAFAFA;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-        
-        /* Subtle radial gradient untuk kedalaman visual (depth) */
         .bg-elegant-gradient {
             background: radial-gradient(circle at center, #ffffff 0%, #f3f4f6 100%);
         }
@@ -82,14 +79,11 @@
 </head>
 <body class="bg-elegant-gradient min-h-screen flex items-center justify-center overflow-hidden selection:bg-ojk-red selection:text-white">
 
-    <!-- Main Container -->
     <main class="w-full max-w-md px-8 py-12 flex flex-col items-center text-center opacity-0 animate-fade-in-up">
         
         <!-- Logo Section -->
-        <div class="relative w-40 h-40 md:w-48 md:h-48 mb-8 flex items-center justify-center">
-            <!-- Subtle glow effect di belakang logo -->
+        <div class="relative w-40 h-40 md:w-48 md:h-48 mb-6 flex items-center justify-center">
             <div class="absolute inset-0 bg-ojk-red/5 rounded-full blur-2xl animate-pulse-slow"></div>
-            <!-- Logo Image -->
             <img 
                 src="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771" 
                 alt="Logo OJK Indonesia" 
@@ -98,24 +92,26 @@
             />
         </div>
 
-        <!-- Typography Section -->
-        <div class="space-y-2 mb-12">
+        <!-- Typography Section (Updated Hierarchy for Building Management) -->
+        <div class="space-y-1 mb-10">
             <h1 class="text-xl md:text-2xl font-bold text-ojk-dark tracking-tight">
                 Survei Kepuasan Layanan
             </h1>
-            <p class="text-sm md:text-base font-medium text-gray-500 uppercase tracking-widest">
-                Building Management OJK DIY
-            </p>
+            <h2 class="text-lg md:text-xl font-semibold text-ojk-red">
+                Building Management
+            </h2>
+            <div class="pt-3">
+                <p class="text-[10px] md:text-xs font-medium text-gray-400 uppercase tracking-[0.2em]">
+                    Otoritas Jasa Keuangan DIY
+                </p>
+            </div>
         </div>
 
         <!-- Loading Indicator Section -->
         <div class="w-full max-w-[240px]" role="progressbar" aria-label="Memuat aplikasi survei" aria-valuemin="0" aria-valuemax="100">
-            <!-- Track -->
             <div class="h-1 w-full bg-gray-200 rounded-full overflow-hidden">
-                <!-- Progress Indicator (Red) -->
                 <div class="h-full bg-ojk-red rounded-full animate-progress-bar"></div>
             </div>
-            <!-- Status Text -->
             <p id="loading-text" class="mt-4 text-xs font-medium text-gray-400 tracking-wide transition-opacity duration-300">
                 Menyiapkan sistem...
             </p>
@@ -127,37 +123,37 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             /**
-             * Konfigurasi Redirect ke Google Apps Script (GAS) Web App
-             * Ganti URL_GAS_EXEC Anda di bawah ini
+             * ⚠️ PERHATIAN: Masukkan FULL URL Web App GAS Anda di sini
+             * Berdasarkan screenshot Anda, URL dimulai dengan AKfycbxrgWG2RAEfGNQ4...
              */
-            const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbxrqWG2RAFFGNQ4bKwoqA8i8f8ZVq0E-AfiqHYsIOZA/dev"; // <-- TAUTKAN URL EXEC DI SINI
-            const LOADING_DURATION = 3000; // 3 detik durasi splashscreen (sesuaikan dengan keyframe CSS)
+            const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbzxKe3Uhe3DE3N6uSFwYBw2bz9ytuhOQWCVe8TWXCDmGJcmX6TiHXMbR_77J0MvRyCwdg/exec"; // <-- GANTI DENGAN URL EXEC YANG LENGKAP
             
+            const LOADING_DURATION = 3000; 
             const loadingText = document.getElementById('loading-text');
             
-            // Mengubah teks loading secara dinamis untuk memberikan feedback visual
+            // Dynamic loading text
             setTimeout(() => {
                 loadingText.style.opacity = 0;
                 setTimeout(() => {
-                    loadingText.textContent = "Menghubungkan ke server...";
+                    loadingText.textContent = "Mengalihkan ke formulir...";
                     loadingText.style.opacity = 1;
                 }, 300);
             }, 1500);
 
             // Eksekusi Redirect setelah animasi selesai
             setTimeout(() => {
-                // HAPUS COMMENT PADA BARIS DI BAWAH UNTUK MENGAKTIFKAN REDIRECT
-                // window.location.href = GAS_EXEC_URL;
-                
-                // Fallback teks untuk demo jika redirect belum diaktifkan
                 loadingText.style.opacity = 0;
                 setTimeout(() => {
-                    loadingText.textContent = "Redirecting...";
+                    loadingText.textContent = "Membuka halaman...";
                     loadingText.style.opacity = 1;
                     loadingText.classList.replace('text-gray-400', 'text-ojk-red');
                 }, 300);
                 
-                console.log(`[Arsitektur GAS] Mengalihkan pengguna ke: ${GAS_EXEC_URL}`);
+                console.log(`[Arsitektur GAS] Mengeksekusi redirect ke: ${GAS_EXEC_URL}`);
+                
+                // BARIS INI SUDAH DIAKTIFKAN. Pastikan GAS_EXEC_URL di atas sudah lengkap.
+                window.location.href = GAS_EXEC_URL;
+                
             }, LOADING_DURATION);
         });
     </script>
