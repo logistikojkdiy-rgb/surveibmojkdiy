@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Kepuasan Layanan - OJK DIY</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://ik.imagekit.io/logojkdiy/Layanan%20Terintegrasi%20-%20OJK%20DIY.png?updatedAt=1758676242385">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Survei Kepuasan Layanan - OJK DIY">
+    <meta name="description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+
+    <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Survei Kepuasan Layanan - OJK DIY">
+    <meta property="og:description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+    <meta property="og:image" content="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Survei Kepuasan Layanan - OJK DIY">
+    <meta property="twitter:description" content="Bantu kami meningkatkan kualitas dengan mengisi Survei Kepuasan Layanan Building Management Otoritas Jasa Keuangan (OJK) DIY.">
+    <meta property="twitter:image" content="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'ojk-red': '#DA251D',
+                        'ojk-dark': '#1F2937',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'progress-bar': 'progressFill 3s cubic-bezier(0.65, 0, 0.35, 1) forwards',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        progressFill: {
+                            '0%': { width: '0%', opacity: '0.5' },
+                            '20%': { width: '40%', opacity: '1' },
+                            '80%': { width: '90%' },
+                            '100%': { width: '100%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Base styling untuk memastikan background benar-benar bersih */
+        body {
+            background-color: #FAFAFA;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Subtle radial gradient untuk kedalaman visual (depth) */
+        .bg-elegant-gradient {
+            background: radial-gradient(circle at center, #ffffff 0%, #f3f4f6 100%);
+        }
+    </style>
+</head>
+<body class="bg-elegant-gradient min-h-screen flex items-center justify-center overflow-hidden selection:bg-ojk-red selection:text-white">
+
+    <!-- Main Container -->
+    <main class="w-full max-w-md px-8 py-12 flex flex-col items-center text-center opacity-0 animate-fade-in-up">
+        
+        <!-- Logo Section -->
+        <div class="relative w-40 h-40 md:w-48 md:h-48 mb-8 flex items-center justify-center">
+            <!-- Subtle glow effect di belakang logo -->
+            <div class="absolute inset-0 bg-ojk-red/5 rounded-full blur-2xl animate-pulse-slow"></div>
+            <!-- Logo Image -->
+            <img 
+                src="https://ik.imagekit.io/logojkdiy/ojk-indonesia-seeklogo.png?updatedAt=1754402028771" 
+                alt="Logo OJK Indonesia" 
+                class="relative z-10 w-full h-auto object-contain drop-shadow-sm"
+                fetchpriority="high"
+            />
+        </div>
+
+        <!-- Typography Section -->
+        <div class="space-y-2 mb-12">
+            <h1 class="text-xl md:text-2xl font-bold text-ojk-dark tracking-tight">
+                Survei Kepuasan Layanan
+            </h1>
+            <p class="text-sm md:text-base font-medium text-gray-500 uppercase tracking-widest">
+                Building Management OJK DIY
+            </p>
+        </div>
+
+        <!-- Loading Indicator Section -->
+        <div class="w-full max-w-[240px]" role="progressbar" aria-label="Memuat aplikasi survei" aria-valuemin="0" aria-valuemax="100">
+            <!-- Track -->
+            <div class="h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+                <!-- Progress Indicator (Red) -->
+                <div class="h-full bg-ojk-red rounded-full animate-progress-bar"></div>
+            </div>
+            <!-- Status Text -->
+            <p id="loading-text" class="mt-4 text-xs font-medium text-gray-400 tracking-wide transition-opacity duration-300">
+                Menyiapkan sistem...
+            </p>
+        </div>
+        
+    </main>
+
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /**
+             * Konfigurasi Redirect ke Google Apps Script (GAS) Web App
+             * Ganti URL_GAS_EXEC Anda di bawah ini
+             */
+            const GAS_EXEC_URL = "https://script.google.com/macros/s/AKfycbxrqWG2RAFFGNQ4bKwoqA8i8f8ZVq0E-AfiqHYsIOZA/dev"; // <-- TAUTKAN URL EXEC DI SINI
+            const LOADING_DURATION = 3000; // 3 detik durasi splashscreen (sesuaikan dengan keyframe CSS)
+            
+            const loadingText = document.getElementById('loading-text');
+            
+            // Mengubah teks loading secara dinamis untuk memberikan feedback visual
+            setTimeout(() => {
+                loadingText.style.opacity = 0;
+                setTimeout(() => {
+                    loadingText.textContent = "Menghubungkan ke server...";
+                    loadingText.style.opacity = 1;
+                }, 300);
+            }, 1500);
+
+            // Eksekusi Redirect setelah animasi selesai
+            setTimeout(() => {
+                // HAPUS COMMENT PADA BARIS DI BAWAH UNTUK MENGAKTIFKAN REDIRECT
+                // window.location.href = GAS_EXEC_URL;
+                
+                // Fallback teks untuk demo jika redirect belum diaktifkan
+                loadingText.style.opacity = 0;
+                setTimeout(() => {
+                    loadingText.textContent = "Redirecting...";
+                    loadingText.style.opacity = 1;
+                    loadingText.classList.replace('text-gray-400', 'text-ojk-red');
+                }, 300);
+                
+                console.log(`[Arsitektur GAS] Mengalihkan pengguna ke: ${GAS_EXEC_URL}`);
+            }, LOADING_DURATION);
+        });
+    </script>
+</body>
+</html>
